@@ -1,7 +1,7 @@
 .success{
-    border-color: green;
+    background-color: rgba(0, 128, 0, 0.233);
 }
 
 .failure{
-    border-color: red;
+    background-color: rgba(255, 0, 0, 0.233);
 }

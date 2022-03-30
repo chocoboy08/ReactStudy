@@ -3,8 +3,8 @@ import './ValidationSample.css';
 export default class ValidationSample extends Component {
     state = {
         password : '',
-        clicked : 'false',
-        validated : 'false'
+        clicked : false,
+        validated : false
     }
 
     handleChange = (e) =>{
@@ -15,14 +15,18 @@ export default class ValidationSample extends Component {
     
     handleClick = () =>{
         this.setState({
-            clicked: 'true',
+            clicked: true,
             validated: this.state.password === '0000'
         })
+        this.input.focus();
     }
 
     handleKeyPress = (e) =>{
         if(e.key === 'Enter'){
             this.handleClick();
+            this.setState({
+                [e.target.name]: ''
+            })
         }
     }
 
@@ -30,6 +34,7 @@ export default class ValidationSample extends Component {
     return (
       <div>
           <input
+          ref={(ref) =>this.input=ref}
           type="password"
           value={this.state.password}
           name="password"

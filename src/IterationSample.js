@@ -30,7 +30,7 @@ export default function IterationSample() {
       }
     }
 
-    const nameList = names.map((name) => <li key={name.id} onDoubleClick={() => {onRemove(name.id)}} onClick={FocusEvent}>{name.text}</li>)
+    const nameList = names.map((name) => <li key={name.id} onDoubleClick={() => {onRemove(name.id)}}>{name.text}</li>)
   return (
     <>
       <input value={inputText} onChange={onChange} onKeyDown={onKeyDown}/>
